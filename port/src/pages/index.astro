@@ -52,7 +52,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </nav>
 
-  <section id="hero" class="w-screen h-screen">
+  <section id="hero" class="w-screen h-screen -translate-y-20">
     <div class="container h-full m-auto max-w-7xl flex items-end">
       <div class="flex-col w-full h-96 justify-start">
         <div class="flex-col flex gap-3">
@@ -73,6 +73,33 @@ import Layout from "../layouts/Layout.astro";
                 </ul>
               </span>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative h-40 w-full m-auto max-w-7xl -translate-y-32 flex items-start">
+      <div id="reveal" class="sticky">
+        <div class="container">
+          <div class="text font-bold text-[40px] text-wrap">
+            <p class="flex flex-wrap gap-2 leading-none">
+              <span style="opacity: 0.1">I</span>
+              <span style="opacity: 0.1">create</span>
+              <span style="opacity: 0.1">compelling</span>
+              <span style="opacity: 0.1">designs</span>
+              <span style="opacity: 0.1">across</span>
+              <span style="opacity: 0.1">UI,</span>
+              <span style="opacity: 0.1">video,</span>
+              <span style="opacity: 0.1">motion,</span>
+              <span style="opacity: 0.1">3D,</span>
+              <span style="opacity: 0.1">and</span>
+              <span style="opacity: 0.1">illustration.</span>
+              <span style="opacity: 0.1">Blending</span>
+              <span style="opacity: 0.1">aesthetic</span>
+              <span style="opacity: 0.1">appeal</span>
+              <span style="opacity: 0.1">with</span>
+              <span style="opacity: 0.1">practical</span>
+              <span style="opacity: 0.1">functionality.</span>
+            </p>
           </div>
         </div>
       </div>
@@ -171,5 +198,7 @@ import Layout from "../layouts/Layout.astro";
     // Apply 'text-slide-2' animation to an element with id 'animated-text'
     const element = document.getElementById("animated-text");
     applyAnimation(element, "text-slide-2", "5s", "cubic-bezier(0.83, 0, 0.17, 1)", "infinite");
+
+    //
   </script>
 </Layout>
