@@ -3,6 +3,56 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <style>
+  body {
+    height: 10000px;
+    background-attachment: fixed;
+  }
+
+  h1 {
+    color: #242424;
+    display: block;
+  }
+
+  .wrapper {
+    position: relative;
+    height: 300vh;
+  }
+
+  .sticky {
+    height: 50%;
+    display: flex;
+    align-items: center;
+
+    position: sticky;
+    left: 0;
+    top: 0;
+  }
+
+  .container {
+    margin: 0 auto;
+    position: relative;
+
+    .text {
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      p {
+        margin: 0;
+      }
+
+      span {
+        color: #242424;
+        transition: opacity 0.25s linear;
+
+        &:last-child {
+          border-bottom: 2px solid #fff;
+        }
+      }
+    }
+  }
+
   /* burger */
 
   .line.transform-active:nth-child(1) {
@@ -21,9 +71,9 @@ import Layout from "../layouts/Layout.astro";
 </style>
 
 <Layout title="Yasin's Portfolio">
-  <nav class="justify-between w-full h-fit absolute p-5">
-    <div class="container max-w-[1360px] m-auto flex bg-white rounded-lg">
-      <div class="flex w-full px-10">
+  <nav class="justify-between w-full h-fit absolute">
+    <div class="container max-w-7xl m-auto flex bg-white rounded-lg">
+      <div class="flex w-full">
         <div id="logo-home" class="flex items-center w-full h-20">
           <svg width="54" height="42" viewBox="0 0 54 42" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -52,9 +102,9 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </nav>
 
-  <section id="hero" class="w-screen h-screen -translate-y-20">
-    <div class="container h-full m-auto max-w-7xl flex items-end">
-      <div class="flex-col w-full h-96 justify-start">
+  <section id="hero" class="w-screen h-screen -translate-y-52">
+    <div class="container h-full mx-auto max-w-7xl flex flex-col justify-end gap-0">
+      <div class="flex-col w-full">
         <div class="flex-col flex gap-3">
           <h1 class="font-bold text-8xl z-20">HI, I'm Yasin <span>✌</span></h1>
           <div class="flex h-[120px] w-full z-10 overflow-hidden">
@@ -77,10 +127,12 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </div>
-    <div class="relative h-40 w-full m-auto max-w-7xl -translate-y-32 flex items-start">
+  </section>
+  <section class="">
+    <div class="wrapper text-5xl font-bold">
       <div id="reveal" class="sticky">
-        <div class="container">
-          <div class="text font-bold text-[40px] text-wrap">
+        <div class="container relative mx-auto max-w-7xl">
+          <div class="text">
             <p class="flex flex-wrap gap-2 leading-none">
               <span style="opacity: 0.1">I</span>
               <span style="opacity: 0.1">create</span>
@@ -92,8 +144,8 @@ import Layout from "../layouts/Layout.astro";
               <span style="opacity: 0.1">motion,</span>
               <span style="opacity: 0.1">3D,</span>
               <span style="opacity: 0.1">and</span>
-              <span style="opacity: 0.1">illustration.</span>
-              <span style="opacity: 0.1">Blending</span>
+              <span style="opacity: 0.1">illustration,</span>
+              <span style="opacity: 0.1">blending</span>
               <span style="opacity: 0.1">aesthetic</span>
               <span style="opacity: 0.1">appeal</span>
               <span style="opacity: 0.1">with</span>
@@ -200,5 +252,86 @@ import Layout from "../layouts/Layout.astro";
     applyAnimation(element, "text-slide-2", "5s", "cubic-bezier(0.83, 0, 0.17, 1)", "infinite");
 
     //
+  </script>
+  <script>
+    let availableToReveal = false;
+
+    // container
+    const container = document.getElementById("reveal");
+
+    const containerHeight = container.clientHeight;
+    const containerStart = container.getBoundingClientRect().top;
+    const containerEnd = containerStart + containerHeight;
+
+    // gets all words
+    const words = container.getElementsByTagName("span");
+    const textContainer = container.getElementsByClassName("text")[0];
+    const textContainerContent = textContainer.getElementsByTagName("p")[0];
+
+    // gets the ammount of pixels per each word
+    const pixelsPerWord = Math.round(containerHeight / words.length);
+
+    // returns the current scroll position of the page
+    const getCurrentScroll = () => {
+      return document.documentElement.scrollTop || document.body.scrollTop;
+    };
+
+    // reveals the active words
+    const fitText = () => {
+      let fontSize = 52;
+
+      while (textContainerContent.offsetWidth > textContainer.offsetWidth || textContainerContent.offsetHeight > textContainer.offsetHeight) {
+        fontSize--;
+
+        if (fontSize <= 10) {
+          break;
+        }
+
+        textContainerContent.style.fontSize = fontSize + "px";
+      }
+    };
+
+    const revealActiveWords = () => {
+      const currentScrollPosition = getCurrentScroll();
+
+      let activeWords;
+      const cointainerCurrentScroll = currentScrollPosition - containerStart;
+
+      // gets the number of active words
+      if (currentScrollPosition > containerEnd) {
+        activeWords = words.length;
+      } else if (currentScrollPosition < containerStart) {
+        activeWords = 0;
+      } else {
+        availableToReveal = true;
+        activeWords = Math.round(cointainerCurrentScroll / pixelsPerWord);
+      }
+
+      if (availableToReveal) {
+        for (var i = 0; i < words.length; i++) {
+          if (activeWords > i) {
+            words[i].style.opacity = 1;
+          } else {
+            words[i].style.opacity = 0.1;
+          }
+        }
+      }
+
+      if (currentScrollPosition > containerEnd || currentScrollPosition < containerStart) {
+        availableToReveal = false;
+      }
+    };
+
+    // init
+    fitText();
+    revealActiveWords();
+
+    document.addEventListener("scroll", () => {
+      revealActiveWords();
+    });
+
+    window.addEventListener("resize", () => {
+      fitText();
+    });
   </script>
 </Layout>
