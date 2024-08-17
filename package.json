@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@types/jquery": "^3.5.30"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "jquery-smooth-scroll": "^2.2.0"
+  }
+}
