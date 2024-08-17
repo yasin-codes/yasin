@@ -76,20 +76,16 @@ import Layout from "../layouts/Layout.astro";
   /* burger */
 
   .line.transform-active:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
+    transform: translateY(2px) rotate(45deg);
   }
 
   .line.transform-active:nth-child(2) {
-    opacity: 0;
-  }
-
-  .line.transform-active:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
   }
 </style>
 
 <Layout title="Yasin's Portfolio">
-  <div class="relative h-[2500px]">
+  <div class="relative h-[3000px]">
     <div class="sticky top-0">
       <nav class="w-full h-fit">
         <div class="container max-w-7xl m-auto flex bg-white rounded-lg">
@@ -113,7 +109,6 @@ import Layout from "../layouts/Layout.astro";
             </div>
             <div id="menus" class="w-full h-20 flex items-center justify-end">
               <div class="my-auto cursor-pointer space-y-2 z-50" id="hamburger">
-                <div class="line h-0.5 w-10 bg-primary transition-all duration-300"></div>
                 <div class="line h-0.5 w-10 bg-primary transition-all duration-300"></div>
                 <div class="line h-0.5 w-10 bg-primary transition-all duration-300"></div>
               </div>
@@ -148,7 +143,7 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </div>
       </section>
-      <section class="">
+      <section class="text-revealing">
         <div class="text-lg md:text-2xl lg:text-[40px] font-bold">
           <div id="reveal">
             <div class="container relative mx-auto px-[3px] max-w-7xl">
@@ -175,6 +170,13 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="mx-auto container max-w-7xl flex flex-col bg-red-50 w-full h-96">
+          <div></div>
+          <div></div>
         </div>
       </section>
     </div>
@@ -298,6 +300,12 @@ import Layout from "../layouts/Layout.astro";
           span.style.opacity = 0.1;
         }
       });
+    });
+  </script>
+  <script>
+    document.getElementById("hamburger").addEventListener("click", function () {
+      const lines = this.querySelectorAll(".line");
+      lines.forEach((line) => line.classList.toggle("transform-active"));
     });
   </script>
 </Layout>
