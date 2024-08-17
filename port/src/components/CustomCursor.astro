@@ -1,0 +1,86 @@
+---
+
+---
+
+<div id="custom-cursor" class="custom-cursor"></div>
+
+<style>
+  :global(*) {
+    cursor: none !important;
+  }
+
+  .custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000;
+    pointer-events: none;
+    z-index: 9999;
+    transition:
+      width 0.3s,
+      height 0.3s,
+      background 0.3s;
+  }
+
+  .cursor-large,
+  .cursor-arrow,
+  .cursor-lens {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cursor-arrow {
+    background: #000 url(arrow-icon.svg) no-repeat center center;
+    background-size: 70%;
+  }
+
+  .cursor-lens {
+    background: #000 url(lens-icon.svg) no-repeat center center;
+    background-size: 70%;
+  }
+</style>
+
+<script>
+  let cursorX = 0;
+  let cursorY = 0;
+  let targetX = 0;
+  let targetY = 0;
+
+  function lerp(start: number, end: number, factor: number) {
+    return start + (end - start) * factor;
+  }
+
+  function updateCursor() {
+    const cursor = document.getElementById("custom-cursor");
+    if (cursor) {
+      cursorX = lerp(cursorX, targetX, 0.1);
+      cursorY = lerp(cursorY, targetY, 0.1);
+      cursor.style.left = `${cursorX}px`;
+      cursor.style.top = `${cursorY}px`;
+    }
+    requestAnimationFrame(updateCursor);
+  }
+
+  function handleMouseMove(e: MouseEvent) {
+    targetX = e.clientX;
+    targetY = e.clientY;
+
+    const cursor = document.getElementById("custom-cursor");
+    if (cursor) {
+      const target = e.target as Element;
+      if (target.matches("button")) {
+        cursor.className = "custom-cursor cursor-large";
+      } else if (target.matches("a")) {
+        cursor.className = "custom-cursor cursor-arrow";
+      } else if (target.matches("img")) {
+        cursor.className = "custom-cursor cursor-lens";
+      } else {
+        cursor.className = "custom-cursor";
+      }
+    }
+  }
+
+  document.addEventListener("mousemove", handleMouseMove);
+  updateCursor();
+</script>
