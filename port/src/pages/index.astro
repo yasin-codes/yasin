@@ -3,6 +3,19 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <style>
+  .anim-underline-fx {
+    color: #242424;
+    text-decoration: none;
+    background-image: linear-gradient(to right, #242424 50%, #d1d5db 10%);
+    background-size: 200% 3px;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    transition: background-position 0.3s;
+  }
+
+  .anim-underline-fx:hover {
+    background-position: 0% 100%;
+  }
   .wave {
     animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
     animation-duration: 2.5s; /* Change to speed up or slow down */
@@ -85,7 +98,7 @@ import Layout from "../layouts/Layout.astro";
 </style>
 
 <Layout title="Yasin's Portfolio">
-  <div class="relative h-[3000px]">
+  <div class="relative h-[3200px]">
     <div class="sticky top-0">
       <nav class="w-full h-fit">
         <div class="container max-w-7xl m-auto flex bg-white rounded-lg">
@@ -143,7 +156,7 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </div>
       </section>
-      <section class="text-revealing">
+      <section class="text-revealing pb-80">
         <div class="text-lg md:text-2xl lg:text-[40px] font-bold">
           <div id="reveal">
             <div class="container relative mx-auto px-[3px] max-w-7xl">
@@ -173,10 +186,21 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </section>
 
-      <section>
-        <div class="mx-auto container max-w-7xl flex flex-col bg-red-50 w-full h-96">
-          <div></div>
-          <div></div>
+      <section id="service">
+        <div class="mx-auto container max-w-7xl flex flex-col w-full h-96 gap-14">
+          <div id="upper1">
+            <h2 class="font-bold text-6xl text-primary py-2">Services</h2>
+          </div>
+          <div id="bottom1">
+            <div class="grid grid-cols-3 text-3xl gap-5">
+              <p class="px-2 py-4 anim-underline-fx">UI/UX</p>
+              <p class="px-2 py-4 anim-underline-fx">3D Design</p>
+              <p class="px-2 py-4 anim-underline-fx">Motion & Illustration</p>
+              <p class="px-2 py-4 anim-underline-fx">Video Editing</p>
+              <p class="px-2 py-4 anim-underline-fx">Graphic Design</p>
+              <p class="px-2 py-4 anim-underline-fx">Frontend</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
