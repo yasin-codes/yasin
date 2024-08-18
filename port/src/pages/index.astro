@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <style>
-  *:not(img):not(nav):not(svg):not(h3):not(#info):not(h3 span):not(a):not(button):not(span):not(.anim-underline-fx) {
+  *:not(img):not(nav):not(svg):not(h3):not(#info):not(h3 span):not(a):not(button):not(span):not(.anim-underline-fx):not(li) {
     opacity: 0;
     transform: translateY(20px);
     transition:
@@ -11,7 +11,7 @@ import Layout from "../layouts/Layout.astro";
       transform 0.7s;
   }
 
-  *:not(img):not(nav):not(svg):not(h3):not(#info):not(h3 span):not(a):not(button):not(span):not(.anim-underline-fx).animate {
+  *:not(img):not(nav):not(svg):not(h3):not(#info):not(h3 span):not(a):not(button):not(span):not(.anim-underline-fx):not(li).animate {
     opacity: 1;
     transform: translateY(0);
   }
@@ -155,7 +155,7 @@ import Layout from "../layouts/Layout.astro";
               <h1 class="font-bold text-4xl md:text-5xl lg:text-8xl z-10">HI, I'm Yasin <span class="wave">✌️</span></h1>
               <div class="flex h-[45px] md:h-[60px] lg:h-[120px] w-full z-0 overflow-hidden">
                 <!-- <h1 class="font-bold text-8xl flex gap-5 bg-red-500">I do</h1> -->
-                <div class="font-bold text-4xl md:text-5xl lg:text-8xl [text-wrap:balance] bg-clip-text text-primary">
+                <div id="rotatetext" class="font-bold text-4xl md:text-5xl lg:text-8xl [text-wrap:balance] bg-clip-text text-primary">
                   I like to <span class="text-primary inline-flex flex-col h-[calc(theme(fontSize.8xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.8xl)*theme(lineHeight.tight))] overflow-hidden">
                     <ul class="block animate-text-slide-4 text-left leading-tight [&_li]:block">
                       <li>Move Pixels</li>
