@@ -1,9 +1,18 @@
 {
-  "devDependencies": {
-    "@types/jquery": "^3.5.30"
+  "name": "port",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "jquery": "^3.7.1",
-    "jquery-smooth-scroll": "^2.2.0"
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.13.1",
+    "gsap": "^3.12.5",
+    "tailwindcss": "^3.4.7"
   }
 }

@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <style>
-  *:not(img):not(nav):not(svg):not(h3):not(#info):not(h3 span):not(a):not(button):not(span):not(.anim-underline-fx):not(li) {
+  *:not(img):not(nav):not(svg):not(h3):not(#info):not(h3 span):not(a):not(button):not(span):not(.anim-underline-fx):not(li):not(.line) {
     opacity: 0;
     transform: translateY(20px);
     transition:
@@ -11,7 +11,7 @@ import Layout from "../layouts/Layout.astro";
       transform 0.7s;
   }
 
-  *:not(img):not(nav):not(svg):not(h3):not(#info):not(h3 span):not(a):not(button):not(span):not(.anim-underline-fx):not(li).animate {
+  *:not(img):not(nav):not(svg):not(h3):not(#info):not(h3 span):not(a):not(button):not(span):not(.anim-underline-fx):not(li):not(.line).animate {
     opacity: 1;
     transform: translateY(0);
   }
@@ -207,7 +207,7 @@ import Layout from "../layouts/Layout.astro";
             <h2 class="font-bold text-6xl text-primary py-2">Services</h2>
           </div>
           <div id="bottom1">
-            <div class="grid grid-cols-3 text-3xl gap-5">
+            <div class="grid grid-cols-3 text-3xl gap-3">
               <p class="px-2 py-4 anim-underline-fx">UI/UX</p>
               <p class="px-2 py-4 anim-underline-fx">3D Design</p>
               <p class="px-2 py-4 anim-underline-fx">Motion & Illustration</p>
@@ -221,14 +221,64 @@ import Layout from "../layouts/Layout.astro";
 
       <section id="works" class="pb-60">
         <div class="mx-auto container max-w-7xl flex flex-col w-full h-96 gap-14">
-          <div id="upper1">
+          <div id="upper2">
             <h2 class="font-bold text-6xl text-primary py-2">Featured Works</h2>
           </div>
-          <div id="bottom1">
+          <div id="bottom2">
+            <div class="w-full h-fit gap-8 flex flex-col">
+              <div class="gap-3 justify-center flex">
+                <img
+                  class="bg-blue-50 w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden"
+                  src="https://images.unsplash.com/photo-1666015322883-2a42050a439d?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                />
+                <img
+                  class="bg-blue-50 w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden"
+                  src="
+                https://images.unsplash.com/photo-1634129003118-37a254f894bd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                />
+                <img
+                  class="bg-blue-50 w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden"
+                  src="
+                https://images.unsplash.com/photo-1637666505754-7416ebd70cbf?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                />
+                <img
+                  class="bg-blue-50 w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden"
+                  src="https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                />
+                <img
+                  class="bg-blue-50 w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden"
+                  src="https://images.unsplash.com/photo-1678222453727-00e17c2e582e?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                />
+              </div>
+              <div class="w-full h-fit flex justify-start">
+                <a href="" class="transition-all duration-300 group flex justify-center items-center gap-2 pl-1 pr-6 hover:pr-1 hover:pl-6 text-xl py-3 border-primary text-primary border-[1.5px] overflow-hidden rounded-full">
+                  <span class="transition-all duration-300 invisible -translate-x-96 group-hover:visible group-hover:translate-x-0"
+                    ><svg class="stroke-[1.5px]" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 7.5L1 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M9 14.5L16 7.5L9 0.499999" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></span
+                  >
+                  <p class="">See all</p>
+                  <span class="transition-all duration-300 visible group-hover:translate-x-96 group-hover:invisible"
+                    ><svg class="stroke-[1.5px]" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 7.5L1 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M9 14.5L16 7.5L9 0.499999" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- <div id="bottom1 test">
             <a href="" class="underline text-4xl">test</a>
             <button class="border-2 p-10">test</button>
             <img src="https://sekolahdeveloperindonesia.com/_next/image?url=%2Froadmap.jpg&w=1200&q=75" alt="" />
-          </div>
+          </div> -->
         </div>
       </section>
     </div>
