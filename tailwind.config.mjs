@@ -17,6 +17,7 @@ export default {
         "text-slide-7": "text-slide-7 17.5s cubic-bezier(0.83, 0, 0.17, 1) infinite",
         "text-slide-8": "text-slide-8 20s cubic-bezier(0.83, 0, 0.17, 1) infinite",
       },
+
       keyframes: {},
     },
   },
