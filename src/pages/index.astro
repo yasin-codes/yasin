@@ -111,6 +111,57 @@ import Layout from "../layouts/Layout.astro";
   .line.transform-active:nth-child(2) {
     transform: translateY(-8px) rotate(-45deg);
   }
+
+  #items {
+    left: max(calc(200px * 8), 100%);
+    animation-name: scrollLeft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    right: -500px;
+  }
+
+  @keyframes scrollLeft {
+    to {
+      left: -500px;
+    }
+  }
+
+  .item1 {
+    animation-delay: calc(30s / 8 * (8 - 1) * -1);
+  }
+
+  .item2 {
+    animation-delay: calc(30s / 8 * (8 - 2) * -1);
+  }
+
+  .item3 {
+    animation-delay: calc(30s / 8 * (8 - 3) * -1);
+  }
+
+  .item4 {
+    animation-delay: calc(30s / 8 * (8 - 4) * -1);
+  }
+
+  .item5 {
+    animation-delay: calc(30s / 8 * (8 - 5) * -1);
+  }
+
+  .item6 {
+    animation-delay: calc(30s / 8 * (8 - 6) * -1);
+  }
+
+  .item7 {
+    animation-delay: calc(30s / 8 * (8 - 7) * -1);
+  }
+
+  .item8 {
+    animation-delay: calc(30s / 8 * (8 - 8) * -1);
+  }
+
+  #wrapper {
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+  }
 </style>
 
 <Layout title="Yasin's Portfolio">
@@ -228,29 +279,29 @@ import Layout from "../layouts/Layout.astro";
             <div class="w-full h-fit gap-8 flex flex-col">
               <div class="gap-3 justify-center flex">
                 <img
-                  class="bg-blue-50 w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden saturate-100 opacity-75 hover:opacity-100 contrast-125 hover:contrast-100 hover:saturate-100"
+                  class="bg-white w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden saturate-100 opacity-75 hover:opacity-100 contrast-125 hover:contrast-100 hover:saturate-100"
                   src="https://images.unsplash.com/photo-1638937480132-ebdc0219a4af?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
                 />
                 <img
-                  class="bg-blue-50 w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden saturate-100 opacity-75 hover:opacity-100 contrast-125 hover:contrast-100 hover:saturate-100"
+                  class="bg-white w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden saturate-100 opacity-75 hover:opacity-100 contrast-125 hover:contrast-100 hover:saturate-100"
                   src="
                https://images.unsplash.com/photo-1642059893618-22daf30e92a2?q=80&w=1966&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
                 />
                 <img
-                  class="bg-blue-50 w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden saturate-100 opacity-75 hover:opacity-100 contrast-125 hover:contrast-100 hover:saturate-100"
+                  class="bg-white w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden saturate-100 opacity-75 hover:opacity-100 contrast-125 hover:contrast-100 hover:saturate-100"
                   src="
                 https://images.unsplash.com/photo-1637666505754-7416ebd70cbf?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
                 />
                 <img
-                  class="bg-blue-50 w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden saturate-100 opacity-75 hover:opacity-100 contrast-125 hover:contrast-100 hover:saturate-100"
+                  class="bg-white w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden saturate-100 opacity-75 hover:opacity-100 contrast-125 hover:contrast-100 hover:saturate-100"
                   src="https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
                 />
                 <img
-                  class="bg-blue-50 w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden saturate-100 opacity-75 hover:opacity-100 contrast-125 hover:contrast-100 hover:saturate-100"
+                  class="bg-white w-full h-[500px] border-none rounded-md flex basis-1/4 hover:basis-2/4 transition-all duration-300 object-cover overflow-hidden saturate-100 opacity-75 hover:opacity-100 contrast-125 hover:contrast-100 hover:saturate-100"
                   src="https://images.unsplash.com/photo-1678222453727-00e17c2e582e?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
                 />
@@ -287,7 +338,69 @@ import Layout from "../layouts/Layout.astro";
           <div id="upper3">
             <h2 class="font-bold text-6xl text-primary py-2">Stacks</h2>
           </div>
-          <div id="bottom3"></div>
+          <div id="bottom3">
+            <div id="wrapper" class="flex overflow-hidden h-36 items-center w-full flex-nowrap py-24">
+              <div class="bg-[#001E36] flex justify-center items-center w-32 h-32 absolute rounded-3xl item1" id="items">
+                <p class="font-bold font-['Myriad_Pro'] text-7xl text-[#31A8FF] mb-1">Ps</p>
+              </div>
+              <div class="bg-[#00005B] flex justify-center items-center w-32 h-32 absolute rounded-3xl item2" id="items">
+                <p class="font-bold font-['Myriad_Pro'] text-7xl text-[#9999FF] mb-1">Pr</p>
+              </div>
+              <div class="bg-[#00005B] flex justify-center items-center w-32 h-32 absolute rounded-3xl item3" id="items">
+                <p class="font-bold font-['Myriad_Pro'] text-7xl text-[#9999FF] mb-1">Ae</p>
+              </div>
+              <div class="bg-[#330000] flex justify-center items-center w-32 h-32 absolute rounded-3xl item4" id="items">
+                <p class="font-bold font-['Myriad_Pro'] text-7xl text-[#FF9A00] mb-1">Ai</p>
+              </div>
+              <div class="bg-orange-50 flex items-center justify-center w-32 h-32 absolute rounded-3xl item5" id="items">
+                <svg class="size-20 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 256 208"
+                  ><path
+                    fill="#FFF"
+                    d="M100.43 115.195c.931-16.606 9.062-31.235 21.33-41.606c12.03-10.186 28.222-16.412 45.89-16.412c17.65 0 33.843 6.226 45.882 16.412c12.258 10.37 20.39 25 21.33 41.588c.93 17.062-5.928 32.912-17.958 44.661c-12.267 11.951-29.716 19.45-49.254 19.45c-19.538 0-37.021-7.499-49.28-19.45c-12.039-11.75-18.88-27.6-17.94-44.643Z"
+                  ></path><path
+                    fill="#265787"
+                    d="M133.168 116.676c.477-8.52 4.65-16.027 10.944-21.348c6.173-5.226 14.481-8.421 23.547-8.421c9.056 0 17.365 3.195 23.542 8.421c6.29 5.321 10.462 12.828 10.944 21.34c.478 8.754-3.04 16.887-9.214 22.915c-6.294 6.132-15.247 9.98-25.272 9.98c-10.025 0-18.996-3.848-25.286-9.98c-6.177-6.028-9.687-14.161-9.205-22.907Z"
+                  ></path><path
+                    fill="#EA7600"
+                    d="M78.41 134.18c.06 3.34 1.125 9.834 2.724 14.904c3.359 10.733 9.057 20.663 16.986 29.413c8.137 8.995 18.156 16.22 29.73 21.349c12.164 5.387 25.344 8.132 39.034 8.11c13.668-.019 26.849-2.818 39.013-8.246c11.573-5.179 21.583-12.435 29.707-21.434c7.924-8.787 13.613-18.734 16.982-29.467c1.693-5.423 2.763-10.927 3.192-16.45a74.978 74.978 0 0 0-.528-16.336c-1.508-10.611-5.18-20.567-10.833-29.643c-5.17-8.34-11.834-15.641-19.759-21.787l.018-.013l-79.97-61.405c-.073-.054-.132-.112-.209-.162c-5.246-4.028-14.07-4.014-19.84.022c-5.834 4.082-6.502 10.833-1.31 15.09l-.022.023l33.355 27.124l-101.663.108h-.136c-8.403.01-16.48 5.523-18.08 12.49c-1.643 7.098 4.065 12.986 12.802 13.018l-.014.031l51.53-.1L9.167 141.4c-.117.086-.244.176-.352.262c-8.674 6.642-11.478 17.687-6.015 24.676c5.545 7.108 17.335 7.121 26.099.041l50.184-41.071s-.732 5.544-.673 8.872Zm128.955 18.566c-10.34 10.535-24.817 16.508-40.48 16.54c-15.687.027-30.163-5.893-40.503-16.409c-5.053-5.125-8.764-11.022-11.054-17.303a44.932 44.932 0 0 1-2.537-19.334c.546-6.462 2.47-12.625 5.54-18.202c3.016-5.481 7.17-10.435 12.3-14.625c10.05-8.19 22.847-12.625 36.23-12.643c13.398-.018 26.185 4.376 36.246 12.54c5.12 4.171 9.27 9.107 12.286 14.58a45.673 45.673 0 0 1 5.563 18.192a45.04 45.04 0 0 1-2.547 19.32c-2.294 6.3-5.992 12.197-11.044 17.344Z"
+                  ></path></svg
+                >
+              </div>
+              <div class="bg-gray-900 w-32 h-32 absolute rounded-3xl item6 flex justify-center items-center" id="items">
+                <svg class="size-16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="288" height="432" viewBox="0 0 288 432" fill="none">
+                  <rect width="95.0226" height="142.534" fill="black" fill-opacity="0" transform="translate(1.46603 2.19946) scale(3)"> </rect>
+                  <path d="M144 216C144 176.641 175.907 144.733 215.267 144.733V144.733C254.626 144.733 286.534 176.641 286.534 216V216C286.534 255.36 254.626 287.267 215.267 287.267V287.267C175.907 287.267 144 255.36 144 216V216Z" fill="#1ABCFE"> </path>
+                  <path d="M1.46603 358.534C1.46603 319.175 33.3733 287.267 72.733 287.267H144V358.534C144 397.894 112.093 429.801 72.733 429.801V429.801C33.3733 429.801 1.46603 397.894 1.46603 358.534V358.534Z" fill="#0ACF83"> </path>
+                  <path d="M144 2.19946V144.733H215.267C254.627 144.733 286.534 112.826 286.534 73.4664V73.4664C286.534 34.1068 254.627 2.19946 215.267 2.19946L144 2.19946Z" fill="#FF7262"> </path>
+                  <path d="M1.46603 73.4664C1.46603 112.826 33.3733 144.733 72.733 144.733L144 144.733L144 2.19941L72.733 2.19941C33.3733 2.19941 1.46603 34.1067 1.46603 73.4664V73.4664Z" fill="#F24E1E"> </path>
+                  <path d="M1.46603 216C1.46603 255.36 33.3733 287.267 72.733 287.267H144L144 144.733L72.733 144.733C33.3733 144.733 1.46603 176.641 1.46603 216V216Z" fill="#A259FF"> </path>
+                </svg>
+              </div>
+              <div class="bg-indigo-50/50 flex justify-center items-center w-32 h-32 absolute rounded-3xl item7" id="items">
+                <svg class="size-20" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 32 32"
+                  ><path fill="#0065a9" d="m29.01 5.03l-5.766-2.776a1.742 1.742 0 0 0-1.989.338L2.38 19.8a1.166 1.166 0 0 0-.08 1.647c.025.027.05.053.077.077l1.541 1.4a1.165 1.165 0 0 0 1.489.066L28.142 5.75A1.158 1.158 0 0 1 30 6.672v-.067a1.748 1.748 0 0 0-.99-1.575Z"></path><path
+                    fill="#007acc"
+                    d="m29.01 26.97l-5.766 2.777a1.745 1.745 0 0 1-1.989-.338L2.38 12.2a1.166 1.166 0 0 1-.08-1.647c.025-.027.05-.053.077-.077l1.541-1.4A1.165 1.165 0 0 1 5.41 9.01l22.732 17.24A1.158 1.158 0 0 0 30 25.328v.072a1.749 1.749 0 0 1-.99 1.57Z"></path><path
+                    fill="#1f9cf0"
+                    d="M23.244 29.747a1.745 1.745 0 0 1-1.989-.338A1.025 1.025 0 0 0 23 28.684V3.316a1.024 1.024 0 0 0-1.749-.724a1.744 1.744 0 0 1 1.989-.339l5.765 2.772A1.748 1.748 0 0 1 30 6.6v18.8a1.748 1.748 0 0 1-.991 1.576Z"></path></svg
+                >
+              </div>
+              <div class="bg-slate-900 flex justify-center items-center w-32 h-32 absolute rounded-3xl item8" id="items">
+                <svg class="size-16" width="80" height="81" viewBox="0 0 80 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_323_160)">
+                    <path
+                      d="M74.5998 33.1C76.3998 27.6 75.7998 21.5 72.8998 16.5C68.4998 8.8 59.5998 4.9 50.8998 6.7C47.0998 2.4 41.4998 0 35.6998 0C26.7998 0 18.9998 5.7 16.1998 14.1C10.4998 15.3 5.59977 18.8 2.69977 23.9C-1.70023 31.6 -0.700232 41.2 5.19977 47.8C3.39977 53.4 4.09977 59.4 6.99977 64.4C11.3998 72.1 20.2998 76.1 28.9998 74.2C32.8998 78.5 38.3998 81 44.1998 81C53.0998 81 60.8998 75.3 63.6998 66.9C69.3998 65.7 74.2998 62.2 77.1998 57.1C81.5998 49.4 80.5998 39.7 74.5998 33.1ZM44.1998 75.7C40.5998 75.7 37.1998 74.5 34.4998 72.2C34.5998 72.1 34.8998 72 34.9998 71.9L51.0998 62.6C51.8998 62.1 52.3998 61.3 52.3998 60.3V37.6L59.1998 41.5C59.2998 41.5 59.2998 41.6 59.2998 41.7V60.5C59.3998 68.9 52.5998 75.7 44.1998 75.7ZM11.5998 61.8C9.79977 58.7 9.19977 55.1 9.79977 51.6C9.89977 51.7 10.0998 51.8 10.2998 51.9L26.3998 61.2C27.1998 61.7 28.1998 61.7 28.9998 61.2L48.6998 49.8V57.7C48.6998 57.8 48.6998 57.9 48.5998 57.9L32.2998 67.3C25.0998 71.5 15.7998 69 11.5998 61.8ZM7.39977 26.6C9.19977 23.5 11.9998 21.2 15.2998 19.9V39.1C15.2998 40 15.7998 40.9 16.5998 41.4L36.2998 52.8L29.4998 56.7C29.3998 56.7 29.2998 56.8 29.2998 56.7L12.9998 47.3C5.59977 43.1 3.19977 33.8 7.39977 26.6ZM63.3998 39.6L43.6998 28.2L50.4998 24.3C50.5998 24.3 50.6998 24.2 50.6998 24.3L66.9998 33.7C74.2998 37.9 76.6998 47.2 72.4998 54.4C70.6998 57.5 67.8998 59.8 64.5998 61V41.9C64.6998 41 64.1998 40.1 63.3998 39.6ZM70.0998 29.4C69.9998 29.3 69.7998 29.2 69.5998 29.1L53.4998 19.8C52.6998 19.3 51.6998 19.3 50.8998 19.8L31.1998 31.2V23.3C31.1998 23.2 31.1998 23.1 31.2998 23.1L47.5998 13.7C54.8998 9.5 64.0998 12 68.2998 19.3C70.0998 22.3 70.6998 25.9 70.0998 29.4ZM27.4998 43.4L20.6998 39.5C20.5998 39.5 20.5998 39.4 20.5998 39.3V20.5C20.5998 12.1 27.3998 5.3 35.7998 5.3C39.3998 5.3 42.7998 6.5 45.4998 8.8C45.3998 8.9 45.1998 9 44.9998 9.1L28.8998 18.4C28.0998 18.9 27.5998 19.7 27.5998 20.7V43.4H27.4998ZM31.1998 35.4L39.9998 30.3L48.7998 35.4V45.5L39.9998 50.6L31.1998 45.5V35.4Z"
+                      fill="white"></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_323_160">
+                      <rect width="80" height="81" fill="currentColor"></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
