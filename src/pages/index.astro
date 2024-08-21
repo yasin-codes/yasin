@@ -312,7 +312,7 @@ import Layout from "../layouts/Layout.astro";
                 />
               </div>
               <div class="w-full h-fit flex justify-start">
-                <a href="" class="bg-white transition-all duration-300 group flex justify-center items-center gap-2 pl-1 pr-6 hover:pr-1 hover:pl-6 text-xl py-3 border-primary text-primary border-[1.5px] overflow-hidden rounded-full">
+                <a href="" class="bg-white transition-all duration-300 group flex justify-center items-center gap-2 pl-1 pr-6 hover:pr-1 hover:pl-6 text-xl py-3 border-primary/30 hover:border-primary text-primary border-[1.5px] overflow-hidden rounded-full">
                   <span class="transition-all duration-300 invisible -translate-x-96 group-hover:visible group-hover:translate-x-0"
                     ><svg class="stroke-[1.5px]" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M15 7.5L1 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -429,7 +429,9 @@ import Layout from "../layouts/Layout.astro";
             <h2 class="font-bold text-6xl text-primary py-2">Have a Project in mind? <br /> or Just wanna say Hello?</h2>
           </div>
           <div id="bottom4">
-            <a href="" class="bg-white transition-all duration-300 group flex justify-center items-center gap-2 w-fit px-8 text-xl py-3 border-primary text-primary border-[1.5px] overflow-hidden rounded-full"> Lets talk! </a>
+            <a href="" class="bg-white transition-all duration-300 group flex justify-center items-center gap-2 w-fit px-8 text-xl py-3 group/! border-primary/30 hover:border-primary text-primary border-[1.5px] overflow-hidden rounded-full">
+              Lets talk <span class="group-hover/!:scale-150 transition-all duration-300">!</span>
+            </a>
           </div>
         </div>
       </section>
