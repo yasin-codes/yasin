@@ -1,5 +1,6 @@
 ---
 import CustomCursor from "../components/CustomCursor.astro";
+import Footer from "../components/Footer.astro";
 interface Props {
   title: string;
 }
@@ -21,8 +22,28 @@ const { title } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
     <link href="https://fonts.cdnfonts.com/css/myriad-pro" rel="stylesheet" />
   </head>
-  <body class="font-['Inter'] scroll-smooth overflow-x-hidden">
-    <CustomCursor />
-    <slot />
+  <body class="font-['Inter'] scroll-smooth overflow-x-hidden h-[5400px] bg-primary">
+    <main class="pb-16 z-10 scale-100 transition-transform duration-500">
+      <CustomCursor />
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
+
+<script>
+  document.addEventListener("scroll", () => {
+    const mainContent = document.getElementById("main-content");
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const totalHeight = document.body.scrollHeight;
+    const scrollPercentage = (scrollPosition / totalHeight) * 100;
+
+    if (scrollPercentage >= 90) {
+      mainContent.classList.remove("scale-100");
+      mainContent.classList.add("scale-90");
+    } else {
+      mainContent.classList.remove("scale-90");
+      mainContent.classList.add("scale-100");
+    }
+  });
+</script>
