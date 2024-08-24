@@ -21,27 +21,31 @@ const { title } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
     <link href="https://fonts.cdnfonts.com/css/myriad-pro" rel="stylesheet" />
+    <style>
+      @keyframes scale-down {
+        to {
+          transform: scale(0.9);
+        }
+      }
+
+      html {
+        height: 5350px;
+        scroll-timeline: --page-scroll block;
+      }
+
+      main {
+        transform: scale(1);
+        animation: scale-down linear;
+        animation-timeline: --page-scroll;
+        animation-range: 90% 100%;
+      }
+    </style>
   </head>
-  <body class="font-['Inter'] scroll-smooth overflow-x-hidden h-[5400px] bg-primary">
+  <body class="font-['Inter'] scroll-smooth overflow-x-hidden h-[5350px] bg-primary">
     <CustomCursor />
-    <slot />
+    <main class="pb-16 z-10 transition-transform duration-1000 bg-white rounded-3xl">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
-
-<script>
-  document.addEventListener("scroll", () => {
-    const mainContent = document.getElementById("main-content");
-    const scrollPosition = window.scrollY + window.innerHeight;
-    const totalHeight = document.body.scrollHeight;
-    const scrollPercentage = (scrollPosition / totalHeight) * 100;
-
-    if (scrollPercentage >= 90) {
-      mainContent.classList.remove("scale-100");
-      mainContent.classList.add("scale-90");
-    } else {
-      mainContent.classList.remove("scale-90");
-      mainContent.classList.add("scale-100");
-    }
-  });
-</script>
