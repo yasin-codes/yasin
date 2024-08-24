@@ -24,9 +24,7 @@ const { title } = Astro.props;
   </head>
   <body class="font-['Inter'] scroll-smooth overflow-x-hidden h-[5400px] bg-primary">
     <CustomCursor />
-    <main class="pb-16 z-10 scale-100 transition-transform duration-500">
-      <slot />
-    </main>
+    <slot />
     <Footer />
   </body>
 </html>
