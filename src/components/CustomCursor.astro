@@ -71,7 +71,7 @@
       const target = e.target as Element;
       if (target.matches("button")) {
         cursor.className = "custom-cursor cursor-large";
-      } else if (target.matches("a")) {
+      } else if (target.matches("a, a *")) {
         cursor.className = "custom-cursor cursor-arrow";
       } else if (target.matches("img")) {
         cursor.className = "custom-cursor cursor-lens";
