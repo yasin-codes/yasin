@@ -83,4 +83,9 @@
 
   document.addEventListener("mousemove", handleMouseMove);
   updateCursor();
+
+  window.onload = () => {
+    document.addEventListener("mousemove", handleMouseMove);
+    updateCursor();
+  };
 </script>
